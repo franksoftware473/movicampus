@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MoviCampus — Panel principal</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav">
+      <a href="panel.html" class="active">Inicio</a>
+      <a href="buscar.html">Buscar rutas</a>
+      <a href="perfil.html">Favoritos</a>
+      <a href="admin-rutas.html">Modo administrador</a>
+    </nav>
+    <div class="user-chip"><span class="avatar">CT</span> Camila Torres</div>
+  </header>
+  <main>
+    <h1>Hola, Camila 👋</h1>
+    <p class="lead">Esto es lo que necesitas saber para tu próximo desplazamiento.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Buscar una ruta</h2>
+        <label>Origen</label>
+        <input type="text" placeholder="Tu ubicación o barrio">
+        <label>Destino</label>
+        <input type="text" value="Corporación Universitaria Iberoamericana">
+        <a href="buscar.html" class="btn btn-primary btn-block" style="margin-top:18px;">Buscar rutas disponibles</a>
+      </div>
+
+      <div class="card">
+        <h2>Notificaciones recientes</h2>
+        <div class="route-item">
+          <div>
+            <div class="route-name">Ruta 4 — Suba Express</div>
+            <div class="route-meta">Cambio de horario: ahora sale 6:50 a.m.</div>
+          </div>
+          <span class="tag tag-amber">Cambio</span>
+        </div>
+        <div class="route-item">
+          <div>
+            <div class="route-name">Ruta 2 — Chapinero</div>
+            <div class="route-meta">Servicio normal esta semana</div>
+          </div>
+          <span class="tag tag-success">Al día</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:32px;">Tus rutas favoritas</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="route-name">Ruta 4 — Suba Express <span class="favorite-star">★</span></div>
+        <div class="route-meta">6:50 a.m. · 7:30 a.m. · 12:15 p.m.</div>
+      </div>
+      <div class="card">
+        <div class="route-name">Ruta 7 — Kennedy <span class="favorite-star">★</span></div>
+        <div class="route-meta">6:15 a.m. · 6:45 a.m. · 1:00 p.m.</div>
+      </div>
+      <div class="card" style="display:flex; align-items:center; justify-content:center;">
+        <a href="buscar.html" class="btn btn-secondary">+ Agregar ruta favorita</a>
+      </div>
+    </div>
+  </main>
+  <footer class="note">Prototipo de alta fidelidad — MoviCampus · Actividad 2</footer>
+</div>
+</body>
+</html>
