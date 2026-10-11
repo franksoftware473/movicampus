@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MoviCampus — Mi perfil</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav">
+      <a href="panel.html">Inicio</a>
+      <a href="buscar.html">Buscar rutas</a>
+      <a href="perfil.html" class="active">Favoritos</a>
+      <a href="admin-rutas.html">Modo administrador</a>
+    </nav>
+    <div class="user-chip"><span class="avatar">CT</span> Camila Torres</div>
+  </header>
+  <main>
+    <h1>Mi perfil</h1>
+    <p class="lead">Tus datos y las rutas que guardaste como favoritas.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Datos de la cuenta</h2>
+        <label>Nombre</label>
+        <input type="text" value="Camila Torres">
+        <label>Correo institucional</label>
+        <input type="email" value="camila.torres@ibero.edu.co">
+        <label>Rol</label>
+        <input type="text" value="Estudiante">
+        <a href="#" class="btn btn-secondary btn-block" style="margin-top:18px;">Guardar cambios</a>
+      </div>
+
+      <div class="card">
+        <h2>Rutas favoritas</h2>
+        <div class="route-item">
+          <div>
+            <div class="route-name">Ruta 4 — Suba Express <span class="favorite-star">★</span></div>
+            <div class="route-meta">6:50 a.m. · 7:30 a.m. · 12:15 p.m.</div>
+          </div>
+        </div>
+        <div class="route-item">
+          <div>
+            <div class="route-name">Ruta 7 — Kennedy <span class="favorite-star">★</span></div>
+            <div class="route-meta">6:15 a.m. · 6:45 a.m. · 1:00 p.m.</div>
+          </div>
+        </div>
+        <a href="buscar.html" class="btn btn-primary btn-block" style="margin-top:14px;">Buscar más rutas</a>
+      </div>
+    </div>
+  </main>
+  <footer class="note">Prototipo de alta fidelidad — MoviCampus · Actividad 2</footer>
+</div>
+</body>
+</html>
