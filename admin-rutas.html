@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MoviCampus — Gestión de rutas</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav">
+      <a href="admin-rutas.html" class="active">Gestión de rutas</a>
+      <a href="admin-reportes.html">Reportes</a>
+      <a href="panel.html">Salir del modo admin</a>
+    </nav>
+    <div class="user-chip"><span class="avatar">CA</span> Coordinación</div>
+  </header>
+  <main>
+    <h1>Gestión de rutas</h1>
+    <p class="lead">Registra, edita o elimina las rutas y horarios disponibles para los usuarios.</p>
+
+    <div class="card" style="margin-bottom:22px;">
+      <h2>Nueva ruta</h2>
+      <div class="grid-3">
+        <div><label>Nombre de la ruta</label><input type="text" placeholder="Ej. Ruta 9 — Engativá"></div>
+        <div><label>Horarios (separados por coma)</label><input type="text" placeholder="6:00 a.m., 6:40 a.m."></div>
+        <div><label>Estado</label><select><option>Activa</option><option>En revisión</option></select></div>
+      </div>
+      <a href="#" class="btn btn-primary" style="margin-top:16px;">Guardar ruta</a>
+    </div>
+
+    <div class="card">
+      <h2>Rutas registradas</h2>
+      <table>
+        <tr><th>Ruta</th><th>Horarios</th><th>Estado</th><th>Acciones</th></tr>
+        <tr>
+          <td>Ruta 4 — Suba Express</td>
+          <td>6:50 a.m., 7:30 a.m., 12:15 p.m.</td>
+          <td><span class="tag tag-success">Activa</span></td>
+          <td><a href="#" class="btn btn-ghost">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Ruta 7 — Kennedy</td>
+          <td>6:15 a.m., 6:45 a.m., 1:00 p.m.</td>
+          <td><span class="tag tag-success">Activa</span></td>
+          <td><a href="#" class="btn btn-ghost">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Ruta 2 — Chapinero</td>
+          <td>7:00 a.m., 7:40 a.m.</td>
+          <td><span class="tag tag-amber">En revisión</span></td>
+          <td><a href="#" class="btn btn-ghost">Editar</a></td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <footer class="note">Prototipo de alta fidelidad — MoviCampus · Actividad 2</footer>
+</div>
+</body>
+</html>
