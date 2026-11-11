@@ -1,4 +1,4 @@
-// MoviCampus — servidor del MVP (API REST + archivos estáticos del frontend)
+// MoviCampus — servidor del MVP
 const path = require('path');
 const express = require('express');
 const bcrypt = require('bcryptjs');
@@ -10,7 +10,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'movicampus-secreto-de-desarrollo';
 const DOMINIO_PERMITIDO = (process.env.DOMINIO_PERMITIDO || '').toLowerCase();
 
 if (!process.env.JWT_SECRET) {
-  console.warn('[aviso] JWT_SECRET no está definido; se usa un secreto de desarrollo. Defínelo antes de publicar.');
+  console.warn('[aviso] JWT_SECRET no está definido; se usa un secreto de desarrollo.');
 }
 
 const ROLES = ['Estudiante', 'Docente', 'Personal administrativo'];
@@ -39,7 +39,7 @@ const lista = (h) =>
 const limpiar = (v, max) =>
   String(v ?? '').trim().slice(0, max);
 
-// Comprobar coincidencia exacta de un barrio.
+// Coincidencia exacta de un barrio.
 function coincideBarrio(barrios, busqueda) {
   const buscado = sinTildes(busqueda);
 
@@ -153,7 +153,7 @@ app.post('/api/auth/registro', (req, res) => {
 
   if (DOMINIO_PERMITIDO && !correo.endsWith('@' + DOMINIO_PERMITIDO)) {
     return res.status(400).json({
-     error: 'Usa tu correo institucional (@' + DOMINIO_PERMITIDO + ').'
+      error: 'Usa tu correo institucional (@' + DOMINIO_PERMITIDO + ').'
     });
   }
 
@@ -409,7 +409,7 @@ app.put('/api/admin/rutas/:id', auth, soloAdmin, (req, res) => {
       d.nombre,
       d.horarios,
       d.estado,
-      Cambio de horario: ahora sale ${lista(d.horarios)[0]},
+      'Cambio de horario: ahora sale ' + lista(d.horarios)[0],
       id
     );
   } else {
@@ -509,7 +509,7 @@ app.use((err, req, res, next) => {
 
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(MoviCampus en http://localhost:${PORT});
+    console.log('MoviCampus en http://localhost:' + PORT);
   });
 }
 
