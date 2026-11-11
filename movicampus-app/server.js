@@ -153,7 +153,7 @@ app.post('/api/auth/registro', (req, res) => {
 
   if (DOMINIO_PERMITIDO && !correo.endsWith('@' + DOMINIO_PERMITIDO)) {
     return res.status(400).json({
-      error: Usa tu correo institucional (@${DOMINIO_PERMITIDO}).
+     error: 'Usa tu correo institucional (@' + DOMINIO_PERMITIDO + ').'
     });
   }
 
