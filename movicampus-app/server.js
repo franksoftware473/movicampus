@@ -120,31 +120,45 @@ app.get('/api/rutas', auth, (req, res) => {
   const destino = limpiar(req.query.destino, 120);
 
   console.log('Búsqueda recibida:', { origen, destino });
+
   const fav = favoritosDe(req.user.id);
 
   let rutas = db.prepare(
     "SELECT * FROM rutas WHERE estado='Activa' ORDER BY id"
   ).all();
 
-  // Buscar coincidencias con el origen.
+  // Filtrar por coincidencia exacta del origen.
   if (origen) {
-    const q = sinTildes(origen);
     rutas = rutas.filter((r) =>
-      sinTildes(r.nombre).includes(q) ||
-      sinTildes(r.barrios).includes(q)
+      coincideBarrio(r.barrios, origen)
     );
   }
 
-  // Buscar coincidencias con el destino.
+  // Filtrar por coincidencia exacta del destino.
   if (destino) {
-    const q = sinTildes(destino);
     rutas = rutas.filter((r) =>
-      sinTildes(r.nombre).includes(q) ||
-      sinTildes(r.barrios).includes(q)
+      coincideBarrio(r.barrios, destino)
     );
   }
 
   const dtos = rutas.map((r) => rutaDTO(r, fav));
+
+  // Guardar el historial de búsqueda.
+  db.prepare(
+    'INSERT INTO busquedas (usuario_id, origen, destino, resultados) VALUES (?,?,?,?)'
+  ).run(req.user.id, origen, destino, dtos.length);
+
+  // Registrar las rutas consultadas.
+  const insC = db.prepare(
+    'INSERT INTO consultas (ruta_id, usuario_id) VALUES (?,?)'
+  );
+
+  db.tx(() => {
+    dtos.forEach((r) => insC.run(r.id, req.user.id));
+  });
+
+  res.json({ total: dtos.length, rutas: dtos });
+});
 
   // Guardar el historial de búsqueda.
   db.prepare(
