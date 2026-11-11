@@ -118,6 +118,8 @@ app.put('/api/me', auth, (req, res) => {
 app.get('/api/rutas', auth, (req, res) => {
   const origen = limpiar(req.query.origen, 80);
   const destino = limpiar(req.query.destino, 120);
+
+  console.log('Búsqueda recibida:', { origen, destino });
   const fav = favoritosDe(req.user.id);
 
   let rutas = db.prepare(
