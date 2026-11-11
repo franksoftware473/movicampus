@@ -1,0 +1,20 @@
+{
+  "name": "movicampus",
+  "version": "1.0.0",
+  "description": "MoviCampus - MVP funcional del sistema de movilidad universitaria (frontend HTML/CSS/JS + API REST con Express y SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --watch --disable-warning=ExperimentalWarning server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Gestión de rutas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="admin-rutas">
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav" aria-label="Navegación de administración">
+      <a href="admin-rutas.html" class="active" aria-current="page">Gestión de rutas</a>
+      <a href="admin-reportes.html">Reportes</a>
+      <a href="panel.html">Salir del modo admin</a>
+    </nav>
+    <div class="user-chip"><span class="avatar" id="user-avatar" aria-hidden="true"></span> <span id="user-name"></span> <button type="button" class="chip-link" id="logout">Salir</button></div>
+  </header>
+  <main>
+    <h1>Gestión de rutas</h1>
+    <p class="lead">Registra, edita o elimina las rutas y horarios disponibles para los usuarios.</p>
+
+    <form class="card" id="form-ruta" style="margin-bottom:22px;" novalidate>
+      <h2 id="titulo-form">Nueva ruta</h2>
+      <div class="grid-3">
+        <div><label for="nombre">Nombre de la ruta</label><input type="text" id="nombre" placeholder="Ej. Ruta 9 — Engativá" required></div>
+        <div><label for="horarios">Horarios (separados por coma)</label><input type="text" id="horarios" placeholder="6:00 a.m., 6:40 a.m." required></div>
+        <div><label for="estado">Estado</label><select id="estado"><option>Activa</option><option>En revisión</option></select></div>
+      </div>
+      <div class="actions" style="margin-top:16px;">
+        <button type="submit" id="btn-guardar" class="btn btn-primary">Guardar ruta</button>
+        <button type="button" id="btn-cancelar" class="btn btn-ghost" hidden>Cancelar edición</button>
+      </div>
+      <div id="msg" class="msg" role="status"></div>
+    </form>
+
+    <div class="card">
+      <h2>Rutas registradas</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ruta</th><th>Horarios</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="tabla-rutas"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer class="note">MVP funcional — MoviCampus · Proyecto tecnológico integrador</footer>
+</div>
+</body>
+</html>

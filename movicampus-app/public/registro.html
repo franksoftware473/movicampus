@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Crear cuenta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="registro">
+  <div class="auth-shell">
+    <main class="auth-card" style="width:420px;">
+      <a class="brand" href="login.html"><span class="dot"></span>MoviCampus</a>
+      <p class="auth-sub">Crea tu cuenta para consultar rutas y horarios</p>
+      <form id="form-registro" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" autocomplete="name" required>
+        <label for="correo">Correo institucional</label>
+        <input type="email" id="correo" name="correo" placeholder="nombre@ibero.edu.co" autocomplete="username" required>
+        <label for="rol">Rol</label>
+        <select id="rol" name="rol">
+          <option>Estudiante</option>
+          <option>Docente</option>
+          <option>Personal administrativo</option>
+        </select>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" minlength="8" required>
+        <button type="submit" id="btn-registro" class="btn btn-primary btn-block" style="margin-top:22px;">Crear cuenta</button>
+        <div id="msg" class="msg" role="alert"></div>
+      </form>
+      <p style="text-align:center; font-size:13px; color:#5B6472; margin-top:18px;">
+        ¿Ya tienes cuenta? <a href="login.html" style="color:#2563A8; font-weight:600; text-decoration:none;">Inicia sesión</a>
+      </p>
+    </main>
+  </div>
+</body>
+</html>

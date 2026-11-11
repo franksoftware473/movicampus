@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Reportes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="admin-reportes">
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav" aria-label="Navegación de administración">
+      <a href="admin-rutas.html">Gestión de rutas</a>
+      <a href="admin-reportes.html" class="active" aria-current="page">Reportes</a>
+      <a href="panel.html">Salir del modo admin</a>
+    </nav>
+    <div class="user-chip"><span class="avatar" id="user-avatar" aria-hidden="true"></span> <span id="user-name"></span> <button type="button" class="chip-link" id="logout">Salir</button></div>
+  </header>
+  <main>
+    <h1>Reportes de uso</h1>
+    <p class="lead">Indicadores clave sobre el uso de la plataforma por parte de la comunidad académica.</p>
+    <div id="msg" class="msg" role="alert"></div>
+
+    <div class="grid-3" style="margin-bottom:24px;">
+      <div class="stat-card"><div class="stat-num" id="stat-activos">—</div><div class="stat-label">Usuarios activos este mes</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-busquedas">—</div><div class="stat-label">Búsquedas de ruta realizadas</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-fav">—</div><div class="stat-label">Usuarios que guardaron una favorita</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Rutas más consultadas</h2>
+      <div id="ranking"></div>
+    </div>
+  </main>
+  <footer class="note">MVP funcional — MoviCampus · Proyecto tecnológico integrador</footer>
+</div>
+</body>
+</html>

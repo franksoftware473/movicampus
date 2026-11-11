@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Iniciar sesión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="login">
+  <div class="auth-shell">
+    <main class="auth-card">
+      <a class="brand" href="login.html"><span class="dot"></span>MoviCampus</a>
+      <p class="auth-sub">Movilidad universitaria, sin sorpresas</p>
+      <form id="form-login" novalidate>
+        <label for="correo">Correo institucional</label>
+        <input type="email" id="correo" name="correo" placeholder="nombre@ibero.edu.co" autocomplete="username" required>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+        <button type="submit" id="btn-login" class="btn btn-primary btn-block" style="margin-top:22px;">Iniciar sesión</button>
+        <div id="msg" class="msg" role="alert"></div>
+      </form>
+      <p style="text-align:center; font-size:13px; color:#5B6472; margin-top:18px;">
+        ¿No tienes cuenta? <a href="registro.html" style="color:#2563A8; font-weight:600; text-decoration:none;">Regístrate</a>
+      </p>
+    </main>
+  </div>
+</body>
+</html>

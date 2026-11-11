@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Buscar rutas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="buscar">
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav" aria-label="Navegación principal">
+      <a href="panel.html">Inicio</a>
+      <a href="buscar.html" class="active" aria-current="page">Buscar rutas</a>
+      <a href="perfil.html">Favoritos</a>
+      <a href="admin-rutas.html" data-solo-admin hidden>Modo administrador</a>
+    </nav>
+    <div class="user-chip"><span class="avatar" id="user-avatar" aria-hidden="true"></span> <span id="user-name"></span> <button type="button" class="chip-link" id="logout">Salir</button></div>
+  </header>
+  <main>
+    <h1>Rutas hacia Ibero — sede Bogotá</h1>
+    <p class="lead" id="lead">Buscando alternativas…</p>
+    <div id="msg" class="msg" role="status"></div>
+
+    <div class="card">
+      <div id="resultados"></div>
+    </div>
+
+    <p style="margin-top:22px;"><a href="panel.html" class="btn btn-ghost">← Volver al panel</a></p>
+  </main>
+  <footer class="note">MVP funcional — MoviCampus · Proyecto tecnológico integrador</footer>
+</div>
+</body>
+</html>

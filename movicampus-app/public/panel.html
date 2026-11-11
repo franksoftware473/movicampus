@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoviCampus — Panel principal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="panel">
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="panel.html"><span class="dot"></span>MoviCampus</a>
+    <nav class="mainnav" aria-label="Navegación principal">
+      <a href="panel.html" class="active" aria-current="page">Inicio</a>
+      <a href="buscar.html">Buscar rutas</a>
+      <a href="perfil.html">Favoritos</a>
+      <a href="admin-rutas.html" data-solo-admin hidden>Modo administrador</a>
+    </nav>
+    <div class="user-chip"><span class="avatar" id="user-avatar" aria-hidden="true"></span> <span id="user-name"></span> <button type="button" class="chip-link" id="logout">Salir</button></div>
+  </header>
+  <main>
+    <h1 id="saludo">Hola 👋</h1>
+    <p class="lead">Esto es lo que necesitas saber para tu próximo desplazamiento.</p>
+    <div id="msg" class="msg" role="alert"></div>
+
+    <div class="grid-2">
+      <form class="card" id="form-buscar">
+        <h2>Buscar una ruta</h2>
+        <label for="origen">Origen</label>
+        <input type="text" id="origen" placeholder="Tu ubicación o barrio" autocomplete="off">
+        <label for="destino">Destino</label>
+        <input type="text" id="destino" value="Corporación Universitaria Iberoamericana">
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">Buscar rutas disponibles</button>
+      </form>
+
+      <div class="card">
+        <h2>Notificaciones recientes</h2>
+        <div id="notificaciones"></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:32px;">Tus rutas favoritas</h2>
+    <div class="grid-3" id="favoritas"></div>
+  </main>
+  <footer class="note">MVP funcional — MoviCampus · Proyecto tecnológico integrador</footer>
+</div>
+</body>
+</html>
